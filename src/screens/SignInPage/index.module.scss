@@ -1,0 +1,30 @@
+@import "../../scss/colors.scss";
+
+.container {
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem 5rem 1rem;
+
+  .title {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: $primary;
+    margin-bottom: 2rem;
+  }
+
+  .label {
+    font-weight: 400;
+    font-size: 1rem;
+    color: $black;
+    margin: 0.5rem 0;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
