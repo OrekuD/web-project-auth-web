@@ -3,6 +3,7 @@ import { useSelectState } from "./store/selectors";
 import SignUpPage from "./screens/SignUpPage";
 import SignInPage from "./screens/SignInPage";
 import ProfilePage from "./screens/ProfilePage";
+import EditProfilePage from "./screens/EditProfilePage";
 
 const App = () => {
   const { authentication } = useSelectState();
@@ -13,6 +14,7 @@ const App = () => {
         {authentication.isAuthenticated ? (
           <>
             <Route path="profile" element={<ProfilePage />} />
+            <Route path="profile/update" element={<EditProfilePage />} />
           </>
         ) : (
           <>

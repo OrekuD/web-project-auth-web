@@ -1,7 +1,8 @@
 @import "../../scss/colors.scss";
+@import "../../scss/breakpoints.scss";
 
 .button {
-  width: 350px;
+  width: 320px;
   height: 55px;
   border-radius: 12px;
   font-size: 1.2rem;
@@ -30,5 +31,9 @@
 
   &:disabled {
     opacity: 0.6;
+  }
+
+  @include md {
+    width: 350px;
   }
 }

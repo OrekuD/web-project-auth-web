@@ -4,8 +4,7 @@ import API from "../../constants/api";
 
 const initialState: AuthenticationState = {
   isAuthenticated: false,
-  accessToken: "",
-  expiryAt: -1
+  accessToken: ""
 };
 
 const slice = createSlice({

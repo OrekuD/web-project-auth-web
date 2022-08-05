@@ -253,3 +253,20 @@ export const UploadIcon = (props: SvgProps) => (
     />
   </svg>
 );
+
+export const ArrowLeftIcon = (props: SvgProps) => (
+  <svg
+    width={props.width}
+    height={props.height}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke={props.color}
+    strokeWidth={props.strokeWidth || 2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M11 17l-5-5m0 0l5-5m-5 5h12"
+    />
+  </svg>
+);
