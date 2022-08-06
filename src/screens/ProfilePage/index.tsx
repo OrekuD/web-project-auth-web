@@ -1,7 +1,13 @@
 import { AxiosResponse } from "axios";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { LogoutIcon, UserCircleIcon, UserIcon } from "../../components/Icons";
+import {
+  LockIcon,
+  LogoutIcon,
+  SettingsIcon,
+  UserCircleIcon,
+  UserIcon
+} from "../../components/Icons";
 import Loader from "../../components/Loader";
 import colors from "../../constants/colors";
 import OkResponse from "../../network/responses/OkResponse";
@@ -53,8 +59,15 @@ const ProfilePage = () => {
           className={classes["row-item"]}
           onClick={() => navigate("/profile/update")}
         >
-          <UserIcon width={20} height={20} color={colors.darkgrey} />
+          <SettingsIcon width={20} height={20} color={colors.darkgrey} />
           <p>Update details</p>
+        </button>
+        <button
+          className={classes["row-item"]}
+          onClick={() => navigate("/profile/change-password")}
+        >
+          <LockIcon width={20} height={20} color={colors.darkgrey} />
+          <p>Change password</p>
         </button>
         <button className={classes["row-item"]} onClick={signOut}>
           <LogoutIcon width={20} height={20} color={colors.darkgrey} />

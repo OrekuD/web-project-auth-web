@@ -4,6 +4,7 @@ import SignUpPage from "./screens/SignUpPage";
 import SignInPage from "./screens/SignInPage";
 import ProfilePage from "./screens/ProfilePage";
 import EditProfilePage from "./screens/EditProfilePage";
+import ChangePasswordPage from "./screens/ChangePasswordPage";
 
 const App = () => {
   const { authentication } = useSelectState();
@@ -15,6 +16,10 @@ const App = () => {
           <>
             <Route path="profile" element={<ProfilePage />} />
             <Route path="profile/update" element={<EditProfilePage />} />
+            <Route
+              path="profile/change-password"
+              element={<ChangePasswordPage />}
+            />
           </>
         ) : (
           <>

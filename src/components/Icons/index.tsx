@@ -66,23 +66,6 @@ export const MailIcon = (props: SvgProps) => (
   </svg>
 );
 
-export const CancelCircleIcon = (props: SvgProps) => (
-  <svg
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke={props.color}
-    width={props.width}
-    height={props.height}
-    strokeWidth={props.strokeWidth || 2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-    />
-  </svg>
-);
-
 export const UserIcon = (props: SvgProps) => (
   <svg
     fill="none"
@@ -172,84 +155,20 @@ export const UserFilledIcon = (props: SvgProps) => (
   </svg>
 );
 
-export const DashboardIcon = (props: SvgProps) => (
+export const LockIcon = (props: SvgProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
+    width={props.width}
+    height={props.height}
     viewBox="0 0 24 24"
     stroke={props.color}
-    width={props.width}
-    height={props.height}
-    strokeWidth={props.strokeWidth || 2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-    />
-  </svg>
-);
-
-export const DashboardFilledIcon = (props: SvgProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    width={props.width}
-    height={props.height}
-    fill={props.color}
-  >
-    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-  </svg>
-);
-
-export const PastIcon = (props: SvgProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
     strokeWidth={2}
-    width={props.width}
-    height={props.height}
-    stroke={props.color}
   >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-    />
-  </svg>
-);
-
-export const ImageIcon = (props: SvgProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    width={props.width}
-    height={props.height}
-    fill={props.color}
-  >
-    <path
-      fillRule="evenodd"
-      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
-
-export const UploadIcon = (props: SvgProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2}
-    width={props.width}
-    height={props.height}
-    stroke={props.color}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
     />
   </svg>
 );

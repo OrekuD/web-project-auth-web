@@ -76,7 +76,10 @@ const SignInPage = () => {
       />
       <TextInput
         value={password}
-        onChange={setPassword}
+        onChange={(text) => {
+          setPassword(text);
+          setEmailError("");
+        }}
         placeholder="Password"
         type={showPassword ? "text" : "password"}
         rightIcon={
