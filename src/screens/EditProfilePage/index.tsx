@@ -1,26 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, TextInput } from "../../components";
-import {
-  ArrowLeftIcon,
-  EyeCancelIcon,
-  EyeIcon,
-  MailIcon,
-  UserIcon
-} from "../../components/Icons";
+import { ArrowLeftIcon, MailIcon, UserIcon } from "../../components/Icons";
 import colors from "../../constants/colors";
-import SignInRequest from "../../network/requests/SignInRequest";
 import isAnyEmpty from "../../utils/isAnyEmpty";
 import classes from "./index.module.scss";
 import API from "../../constants/api";
 import AuthenticationResponse from "../../network/responses/AuthenticationResponse";
 import { AxiosResponse } from "axios";
-import { authenticationActions } from "../../store/slices/authentication.slice";
 import { userActions } from "../../store/slices/user.slice";
 import SignUpRequest from "../../network/requests/SignUpRequest";
 import { useSelectState } from "../../store/selectors";
 import UpdateUserRequest from "../../network/requests/UpdateUserRequest";
+import validateEmail from "../../utils/validateEmail";
 
 const EditProfilePage = () => {
   const { user } = useSelectState();
@@ -44,6 +37,12 @@ const EditProfilePage = () => {
     if (!canProceed || isLoading) {
       return;
     }
+
+    if (!validateEmail(email)) {
+      setEmailError("Please enter valid E-Mail Address");
+      return;
+    }
+
     setIsLoading(true);
 
     const payload: UpdateUserRequest = {
@@ -108,7 +107,20 @@ const EditProfilePage = () => {
         value={email}
         onChange={(text) => {
           setEmail(text);
-          setEmailError("");
+          if (emailError.length > 0) {
+            if (!validateEmail(text)) {
+              setEmailError("Please enter valid E-Mail Address");
+            } else {
+              setEmailError("");
+            }
+          }
+        }}
+        onBlur={() => {
+          if (!validateEmail(email)) {
+            setEmailError("Please enter valid E-Mail Address");
+          } else {
+            setEmailError("");
+          }
         }}
         error={emailError}
         placeholder="Email"

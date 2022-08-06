@@ -4,7 +4,8 @@ import classes from "./index.module.scss";
 interface Props {
   placeholder: string;
   value: string;
-  onChange: React.Dispatch<React.SetStateAction<string>>;
+  onChange: (value: string) => void;
+  onBlur?: () => void;
   type?: React.HTMLInputTypeAttribute;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
@@ -22,6 +23,7 @@ const TextInput = (props: Props) => {
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
           type={props.type}
+          onBlur={props.onBlur}
         />
         {props.rightIcon}
       </div>

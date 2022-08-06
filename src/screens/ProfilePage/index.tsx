@@ -58,7 +58,13 @@ const ProfilePage = () => {
         </button>
         <button className={classes["row-item"]} onClick={signOut}>
           <LogoutIcon width={20} height={20} color={colors.darkgrey} />
-          {isLoading ? <Loader color={colors.primary} /> : <p>Logout</p>}
+          {isLoading ? (
+            <div style={{ marginLeft: "0.5rem" }}>
+              <Loader color={colors.primary} />
+            </div>
+          ) : (
+            <p>Logout</p>
+          )}
         </button>
       </div>
     </div>

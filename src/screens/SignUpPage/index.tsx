@@ -18,6 +18,7 @@ import { AxiosResponse } from "axios";
 import { authenticationActions } from "../../store/slices/authentication.slice";
 import { userActions } from "../../store/slices/user.slice";
 import SignUpRequest from "../../network/requests/SignUpRequest";
+import validateEmail from "../../utils/validateEmail";
 
 const SignUpPage = () => {
   const [email, setEmail] = React.useState("");
@@ -41,6 +42,12 @@ const SignUpPage = () => {
     if (!canProceed || isLoading) {
       return;
     }
+
+    if (!validateEmail(email)) {
+      setEmailError("Please enter valid E-Mail Address");
+      return;
+    }
+
     setIsLoading(true);
 
     const payload: SignUpRequest = {
@@ -49,6 +56,7 @@ const SignUpPage = () => {
       firstName: firstName.trim(),
       lastName: lastName.trim()
     };
+
     try {
       const response = await API.client.post<
         SignUpRequest,
@@ -90,7 +98,20 @@ const SignUpPage = () => {
         value={email}
         onChange={(text) => {
           setEmail(text);
-          setEmailError("");
+          if (emailError.length > 0) {
+            if (!validateEmail(text)) {
+              setEmailError("Please enter valid E-Mail Address");
+            } else {
+              setEmailError("");
+            }
+          }
+        }}
+        onBlur={() => {
+          if (!validateEmail(email)) {
+            setEmailError("Please enter valid E-Mail Address");
+          } else {
+            setEmailError("");
+          }
         }}
         error={emailError}
         placeholder="Email"
